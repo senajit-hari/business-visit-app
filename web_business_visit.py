@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 import csv
 import os
@@ -124,7 +124,6 @@ def get_location():
 
 if __name__ == '__main__':
     app.run(debug=True)
-=======
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 import csv
 import os
@@ -252,4 +251,4 @@ if __name__ == '__main__':
     app.run(debug=True)
 if __name__ == '__main__':
     app.run()
->>>>>>> 8ad3da7 (Initial commit)
+
