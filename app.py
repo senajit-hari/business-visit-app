@@ -14,8 +14,9 @@ app = Flask(__name__)
 # Use DATABASE_URL from environment in production, else fallback to external Render URL
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
     'DATABASE_URL',
-    'postgresql+psycopg2://business_visit_db_user:Q71xLb5KKA9qbnNv6yafOXym8GJc3ySU@dpg-d30m5jh5pdvs7386gq00-a.oregon-postgres.render.com:5432/business_visit_db'
+    'postgresql+psycopg2://business_visit_db_user:Q71xLb5KKA9qbnNv6yafOXym8GJc3ySU@dpg-d30m5jh5pdvs7386gq00-a.oregon-postgres.render.com/business%2Dvisit%2Ddb'
 )
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
