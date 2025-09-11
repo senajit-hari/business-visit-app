@@ -14,9 +14,8 @@ app = Flask(__name__)
 # Use DATABASE_URL from environment in production, else fallback to external Render URL
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
     'DATABASE_URL',
-    'postgresql+psycopg2://business_visit_db_user:Q71xLb5KKA9qbnNv6yafOXym8GJc3ySU@dpg-d30m5jh5pdvs7386gq00-a.oregon-postgres.render.com/business-visit-db'
+    'postgresql+psycopg2://business_visit_db_user:Q71xLb5KKA9qbnNv6yafOXym8GJc3ySU@dpg-d30m5jh5pdvs7386gq00-a.oregon-postgres.render.com:5432/business_visit_db'
 )
-
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -41,10 +40,6 @@ class Visit(db.Model):
     notes = db.Column(db.Text)
     location = db.Column(db.String(200))
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-
-# Initialize tables
-with app.app_context():
-    db.create_all()
 
 # ----------------------
 # ROUTES
